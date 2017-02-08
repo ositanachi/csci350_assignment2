@@ -48,7 +48,5 @@ min-above-min(L1, L2, N).
 common-unique-elements([H|L1], L2, [H|L3]) :-
     /*Checks to see if the Head of L1 is in L2*/
     member(L2, H),
-    /*else...call again. Recursive.*/
-    !,
     /*Recursive call*/
     common-unique_elements(L1, L2, L3).
