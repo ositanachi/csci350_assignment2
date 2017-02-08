@@ -41,8 +41,13 @@ least(Item, [H|T) :-
     N < Head,
     Item is N 
 min-above-min(L1, L2, N) :-
-    listlength(L2, Length),
-    Length < 1.
+    /*Store length of L2 in Size*/
+    listlength(L2, Size),
+    /*If size is less than 1*/
+    Size < 1,
+    /* Call helper function created above*/
+    /*Grabs minimum value in list*/
+    least(N, L1).
 
 /*Number 4*/
 /*Var or List 1, 2, or 3*/
