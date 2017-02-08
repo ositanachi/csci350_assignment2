@@ -44,12 +44,12 @@ min-above-min(L1, L2, N).
 
 /*Number 4*/
 /*Var or List 1, 2, or 3*/
-common-unique-elements(L1, L2, [H|L3]) :-
-    /*True if the Head of L3 appears in both L1 and L2*/
+common-unique-elements(L1, L2, [H|N]) :-
+    /*True if the Head of N appears in both L1 and L2*/
     member(L1, H),
     member(L2, H),
     /*Recursive call*/
-    common-unique_elements(L1, L2, L3).
+    common-unique_elements(L1, L2, N).
 /*Account for cases where N is an empty list so it should always be true*/
 common-unique-elements(_, _, []).
 member([H|_], H).
