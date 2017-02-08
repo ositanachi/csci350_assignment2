@@ -19,7 +19,9 @@ sum-up-numbers-simple([H|T], N) :-
     N is H + Total. /*Recursion...adding it to the previous*/
     /*Need to account for letters*/
     sum-up-numbers-general([H|T], N) :-
-        atom(H).
+        atom(H),
+        /*If it is a letter, ignore and continue with tail*/
+        sum-up-numbers-general(H, N).
     sum-up-numbers-simple([H|T], N) :-
         \+number(H), 
         sum-up-numbers-simple(T, N).
