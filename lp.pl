@@ -1,4 +1,5 @@
 sum-up-numbers-simple([], 0).
-sum-up-numbers-simple([H|T], Acc) :- 
+sum-up-numbers-simple([H|T], N) :- 
     number(H), sum-up-numbers-simple(T, total),
-    Acc is H + Total.
+    N is H + Total.
+
