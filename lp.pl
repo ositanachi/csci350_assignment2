@@ -10,19 +10,18 @@ sum-up-numbers-simple([], 0).
         \+number(H), sum-up-numbers-simple(T, N).
 
 /*Number 2*/
-sum-up-numbers-simple([], 0). 
+sum-up-numbers-general([], 0). 
 sum-up-numbers-general([[]], 0). /*For nested lists*/
-sum-up-numbers-simple([H|T], N) :-
+sum-up-numbers-general([H|T], N) :-
     number(H), 
-    sum-up-numbers-simple(T, Total),
+    sum-up-numbers-general(T, Total),
     /*N=H+Total*/
     N is H + Total. /*Recursion...adding it to the previous*/
     /*Need to account for letters*/
     sum-up-numbers-general([H|T], N) :-
         atom(H),
         /*If it is a letter, ignore and continue with tail*/
-        sum-up-numbers-general(H, N).
-    sum-up-numbers-simple([H|T], N) :-
+        sum-up-numbers-general(T, N).
+    sum-up-numbers-general([H|T], N) :-
         \+number(H), 
-        sum-up-numbers-simple(T, N).
-
+        sum-up-numbers-general(T, N).
