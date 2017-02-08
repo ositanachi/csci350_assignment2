@@ -23,5 +23,6 @@ sum-up-numbers-general([H|T], N) :-
         /*If it is a letter, ignore and continue with tail*/
         sum-up-numbers-general(T, N).
     sum-up-numbers-general([H|T], N) :-
-        \+number(H), 
+        \+number(H),
+        /*Add number and continue with next item in list*/
         sum-up-numbers-general(T, N).
