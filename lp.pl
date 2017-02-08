@@ -42,11 +42,12 @@ least(Item, [H|T) :-
     Item is N 
 min-above-min(L1, L2, N).
 
-
 /*Number 4*/
 /*Var or List 1, 2, or 3*/
 common-unique-elements([H|L1], L2, [H|L3]) :-
-    /*Checks to see if the Head of L1 is in L2*/
+    /*True if the Head of L1 is in L2*/
     member(L2, H),
     /*Recursive call*/
     common-unique_elements(L1, L2, L3).
+/*Account for cases where N is an empty list so it shoudl always be true*/
+common-unique-elements([], _, []).
