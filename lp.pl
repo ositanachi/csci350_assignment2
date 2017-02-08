@@ -44,4 +44,5 @@ min-above-min(L1, L2, N).
 
 
 /*Number 4*/
-
+common-unique-elements([N|L1], L2, [N|L3]) :-
+    member(L2, N),
