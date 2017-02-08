@@ -44,5 +44,10 @@ min-above-min(L1, L2, N).
 
 
 /*Number 4*/
+/*Var or List 1, 2, or 3*/
 common-unique-elements([N|L1], L2, [N|L3]) :-
+    /*Check if the variable is in List 2*/
     member(L2, N),
+    /*else...call again without it*/
+    !,
+    common-unique_elements(L1, L2, L3).
