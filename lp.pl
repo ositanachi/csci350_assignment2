@@ -40,7 +40,9 @@ least(Item, [H|T) :-
     least(N, T),
     N < Head,
     Item is N 
-min-above-min(L1, L2, N).
+min-above-min(L1, L2, N) :-
+    listlength(L2, Length),
+    Length < 1.
 
 /*Number 4*/
 /*Var or List 1, 2, or 3*/
