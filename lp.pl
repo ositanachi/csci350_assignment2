@@ -30,10 +30,16 @@ sum-up-numbers-general([[]], 0). /*For nested lists*/
 /*Number 3*/
 /*Testing helper function to identify smallest...*/
 least(H, [H]).
-least(E, [H|T]) :-
-    least(E, T),
-    Head =< E,
-    E is H.
+/*If the first item is the least, then identify as such*/
+least(Item, [H|T]) :-
+    least(N, T),
+    Head =< N,
+    Item is H.
+/*Otherwise...*/
+least(Item, [H|T) :-
+    least(N, T),
+    N < Head,
+    Item is N 
 min-above-min(L1, L2, N).
 
 
