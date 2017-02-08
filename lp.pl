@@ -52,6 +52,8 @@ common-unique-elements(L1, L2, [H|N]) :-
     common-unique_elements(L1, L2, N).
 /*Account for cases where N is an empty list so it should always be true*/
 common-unique-elements(_, _, []).
+/*Checks if H is in the head of the list*/
 member([H|_], H).
+/*Check if H is in the tail of the list*/
 member([_|T], H) :-
     member(T, H).
